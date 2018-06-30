@@ -8,9 +8,10 @@
 // register cache name
 var version = 'v1::';
 var CacheResources = [
-	'/',
-	'js/converter.js',
-	'js/indexed_db.js'
+	'https://maxfurry.github.io/CurrencyCX/',
+	'https://maxfurry.github.io/CurrencyCX/converter.js',
+	'https://maxfurry.github.io/CurrencyCX/index.html',
+	'https://maxfurry.github.io/CurrencyCX/js/indexed_db.js'
 ];
 
 // Wait before activation until cache
