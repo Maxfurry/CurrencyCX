@@ -6,59 +6,41 @@
 **/
 
 if (!window.indexedDB) {
-    console.log("Your browser doesn't support a stable version of IndexedDB");
+    console.log("Please update browser to latest version to enjoy this app to the fullest");
 }
 
-// open database
+// openning database
 function openDatabase(){
-	// return db instances
 	const DB_NAME 	= 'CurrencyCX';
 	const database 	= indexedDB.open(DB_NAME, 1);
-
-	// on error catch errors
 	database.onerror = (event) => {
 		console.log('error opening web database');
 		return false;
 	};
 
-	// check db version
 	database.onupgradeneeded = function(event) {
-	  	// listen for the event response
-	  	var upgradeDB = event.target.result;
-
-	  	// create an objectStore for this database
-	  	var objectStore = upgradeDB.createObjectStore("currencies");
+		  	let upgradeDB = event.target.result;
+	  	  let objectStore = upgradeDB.createObjectStore("currencies");
 	};
 
 	// return db instance
 	return database;
 }
 
-// save to currencies object
+// save currencies to
 function saveToDatabase(data){
-	// init database
 	const db = openDatabase();
-
-	// on success add user
 	db.onsuccess = (event) => {
-
-		// console.log('database has been openned !');
 		const query = event.target.result;
-
-	  	// check if already exist symbol
 		const currency = query.transaction("currencies").objectStore("currencies").get(data.symbol);
-
-		// wait for users to arrive
 	  	currency.onsuccess = (event) => {
 	  		const dbData = event.target.result;
 	  		const store  = query.transaction("currencies", "readwrite").objectStore("currencies");
 
 	  		if(!dbData){
-	  			// save data into currency object
 				store.add(data, data.symbol);
 	  		}else{
-	  			// update data existing currency object
-				store.put(data, data.symbol);
+	  			store.put(data, data.symbol);
 	  		};
 	  	}
 	}
@@ -71,14 +53,10 @@ function fetchFromDatabase(symbol, amount) {
 
 	// on success add user
 	db.onsuccess = (event) => {
-
-		// console.log('database has been openned !');
-		const query = event.target.result;
+	const query = event.target.result;
 
 		// check if already exist symbol
 		const currency = query.transaction("currencies").objectStore("currencies").get(symbol);
-
-		// wait for users to arrive
 	  	currency.onsuccess = (event) => {
 	  		const data = event.target.result;
 
