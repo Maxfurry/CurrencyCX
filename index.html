@@ -21,6 +21,9 @@
           .then(function(reg) {
               // registration worked
               console.log('Registration succeeded');
+              button.onclick = function() {
+                registration.update();
+              }
             }).catch(function(error) {
               // Registration failed.
               console.log('Registration failed with ' + error);
