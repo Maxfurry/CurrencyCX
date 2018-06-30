@@ -57,21 +57,26 @@ function fetchFromDatabase(symbol, amount) {
 
 		// check if already exist symbol
 		const currency = query.transaction("currencies").objectStore("currencies").get(symbol);
-	  	currency.onsuccess = (event) => {
+      currency.onsuccess = (event) => {
 	  		const data = event.target.result;
 
 			let pairs = symbol.split('_');
 			let fr = pairs[0];
 			let to = pairs[1];
+if (currency.onsuccess) {
+  $(".results").append(`
+    <div>
+              <h1 class="small text-center"> <b>${amount}</b> <b>${fr}</b> & <b>${to}</b> converted successfully !</h1>
+      <hr />
+      Exchange rate for <b>${amount}</b> <b>${fr}</b> to <b>${to}</b> is: <br />
+      <b>${numeral(amount * data.value).format('0.000')}</b>
+    </div>
+  `);
+} else {
+  console.log('You need internet access to add this currency pair');
+  
+}
 
-			$(".results").append(`
-				<div class="card-feel">
-	                <h1 class="small text-center"> <b>${amount}</b> <b>${fr}</b> & <b>${to}</b> converted successfully !</h1>
-					<hr />
-					Exchange rate for <b>${amount}</b> <b>${fr}</b> to <b>${to}</b> is: <br />
-					<b>${numeral(amount * data.value).format('0.000')}</b>
-				</div>
-			`);
 	  	}
 	}
 }
