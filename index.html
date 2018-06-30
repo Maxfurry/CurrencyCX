@@ -29,6 +29,10 @@
               console.log('Registration failed with ' + error);
             });
         }
+
+        function refreshPage() {
+	         window.location.reload();
+         }
     </script>
 
   </head>
@@ -687,7 +691,10 @@
             <button onclick="return convertCurrency()" id="convert">Convert</button>
         </div>
       </div>
-      <div class="col-4 convertedAmount"></div>
+      <div class="col-4">
+        <button onclick="return refreshPage()" id="clear"> Clear</button>
+        <h2 class="convertedAmount"></h2>
+      </div>
     </div> <!--End of row -->
   </div> <!--End of container -->
 
