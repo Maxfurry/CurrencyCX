@@ -8,8 +8,8 @@
 
 // Currencies conversion
 function convertCurrency(){
-	let conv_fr 	= $("#option4rm").val();
-	let conv_to 		= $("#option2").val();
+	let conv_fr = $("#option4rm").val();
+	let conv_to = $("#option2").val();
 	let amount	= $("#UserInput").val();
 
 	// build query
@@ -31,8 +31,17 @@ function convertCurrency(){
 					${ans.to}
 				</div>
 			`);
+
+			let object = {
+				symbol: conv,
+				value: ans.val
+			};
+			saveToDatabase(object);
 		});
-	})
+	}).fail((err) => {
+		fetchFromDatabase(conv, amount);
+	});
+
 	return false;
 }
 
