@@ -6,12 +6,21 @@
 **/
 
 // register cache name
+<<<<<<< HEAD
 let cacheName = 'currnx-v1';
 let CacheResources = [
 	'https://maxfurry.github.io/CurrencyCX/',
 	'https://maxfurry.github.io/CurrencyCX/converter.js',
 	'https://maxfurry.github.io/CurrencyCX/index.html',
 'https://maxfurry.github.io/CurrencyCX/js/indexed_db.js'
+=======
+var version = 'v1::';
+var CacheResources = [
+	'https://maxfurry.github.io/CurrencyCX/',
+	'https://maxfurry.github.io/CurrencyCX/converter.js',
+	'https://maxfurry.github.io/CurrencyCX/index.html',
+	'https://maxfurry.github.io/CurrencyCX/js/indexed_db.js'
+>>>>>>> f18deeb0be10b1afb506cf0ab90d2da2ec96dfc1
 ];
 
 
