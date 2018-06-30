@@ -8,11 +8,6 @@
 
 // Currencies conversion
 function convertCurrency(){
-
-	button.onclick = function() {
-		registration.update();
-	}
-	
 	let conv_fr = $("#option4rm").val();
 	let conv_to = $("#option2").val();
 	let amount	= $("#UserInput").val();
