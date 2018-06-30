@@ -1,3 +1,10 @@
+/**
+* Author: Adeniran Mark Oluwafemi
+* Version: 1.0.0
+* Title: CurrencyCX
+* Discription: To convert between currencies globally
+**/
+
 // register cache name
 var cacheName = 'currnx-v1';
 var CacheResources = [
