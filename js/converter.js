@@ -27,7 +27,7 @@ function convertCurrency(){
 				<div>
 					converted successfully <br />
 					${amount} ${ans.fr} =
-					${parseFloat(Math.round(amount * ans.val) / 100).toFixed(5)}
+					${round(amount * ans.val,5)}
 					${ans.to}
 				</div>
 			`);
@@ -36,8 +36,14 @@ function convertCurrency(){
 	return false;
 }
 
+//convert object to array
 function* obj2arrays(obj) {
     for (let prop of Object.keys(obj)) // own properties, you might use
                                        // for (let prop in obj)
         yield obj[prop];
+}
+
+//return in specified precison
+function round(value, decimals) {
+  return Number(Math.round(value+'e'+decimals)+'e-'+decimals);
 }
