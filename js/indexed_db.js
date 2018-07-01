@@ -70,7 +70,7 @@ function fetchFromDatabase(symbol, amount) {
 				// Remove message
 				setTimeout((err) => {
 					$(".message").html("");
-				}, 5000);
+				}, 1000 * 5);
 				return;
 	  		}
 
