@@ -21,7 +21,6 @@ function convertCurrency(){
 	$.get('https://free.currencyconverterapi.com/api/v5/convert', query, (data) => {
 		// convert to array
 		const convrtns = Array.from(obj2arrays(data.results));
-
 		$.each(convrtns, function(index, ans) {
 			$(".convertedAmount").prepend(`
 				<div>
