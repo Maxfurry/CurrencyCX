@@ -63,14 +63,14 @@ function fetchFromDatabase(symbol, amount) {
         if(data == null){
 	  			$(".message").append(`
 					<div class="text-danger">
-		                	Please connect to the internet
+		                	Please connect to the internet once to convert this currency
 					</div>
 				`);
 
 				// Remove message
 				setTimeout((err) => {
 					$(".message").html("");
-				}, 1000 * 3);
+				}, 5000);
 				return;
 	  		}
 
