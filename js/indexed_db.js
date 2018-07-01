@@ -58,7 +58,7 @@ function fetchFromDatabase(symbol, amount) {
       currency.onsuccess = (event) => {
 	  		const data = event.target.result;
 
-        if(!data){
+        if(data == nul){
 	  			$(".message").append(`
 					<div class="text-danger">
 		                	You have not converted this pairs before <br /> Please connect to the internet once so as to convert
