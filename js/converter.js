@@ -8,7 +8,6 @@
 
 // Currencies conversion
 function convertCurrency(){
-	$(".convertedAmount").append( `<p> Converting, Please wait </p>`);
 	let conv_fr = $("#option4rm").val();
 	let conv_to = $("#option2").val();
 	let amount	= $("#UserInput").val();
@@ -24,6 +23,8 @@ function convertCurrency(){
 		const convrtns = Array.from(obj2arrays(data.results));
 
 		$.each(convrtns, function(index, ans) {
+			$(".convertedAmount").append( `<p> Converting, Please wait </p>`);
+
 			$(".convertedAmount").prepend(`
 				<div>
 					converted successfully <br />
