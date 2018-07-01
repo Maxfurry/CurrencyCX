@@ -8,7 +8,6 @@
 // register cache name
 var cacheName = 'currnx-v1';
 var CacheResources = [
-	'https://maxfurry.github.io/CurrencyCX/',
 	'https://maxfurry.github.io/CurrencyCX/index.html',
 	'https://maxfurry.github.io/CurrencyCX/js/converter.js',
 	'https://maxfurry.github.io/CurrencyCX/js/indexed_db.js',
@@ -41,7 +40,7 @@ self.addEventListener('fetch', function(e) {
           return response;
         });
       });
-    }).catch(alert("Here");)
+    })
   );
 });
 
