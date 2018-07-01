@@ -20,6 +20,7 @@ var CacheResources = [
 
 
 self.addEventListener('install', function(e) {
+	self.skipWaiting();
   console.log('[Service Worker] Install');
   e.waitUntil(
     caches.open(cacheName).then(function(cache) {
