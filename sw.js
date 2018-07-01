@@ -6,8 +6,8 @@
 **/
 
 // register cache name
-var cacheName = 'currnx-v1';
-var CacheResources = [
+const cacheName = 'currnx-v1';
+const CacheResources = [
 	'https://maxfurry.github.io/CurrencyCX/index.html',
 	'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css',
 	'https://maxfurry.github.io/CurrencyCX/js/converter.js',
