@@ -46,12 +46,10 @@ function saveToDatabase(data){
 	}
 }
 
-// fetch from web database
+// fetch from database
 function fetchFromDatabase(symbol, amount) {
-	// init database
 	const db = openDatabase();
 
-	// on success add user
 	db.onsuccess = (event) => {
 	const query = event.target.result;
 
@@ -60,7 +58,7 @@ function fetchFromDatabase(symbol, amount) {
       currency.onsuccess = (event) => {
 	  		const data = event.target.result;
 
-        if(data == null){
+        if(!data){
 	  			$(".message").append(`
 					<div class="text-danger">
 		                	You have not converted this pairs before <br /> Please connect to the internet once so as to convert
