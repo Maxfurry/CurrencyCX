@@ -55,10 +55,24 @@ function fetchFromDatabase(symbol, amount) {
 	db.onsuccess = (event) => {
 	const query = event.target.result;
 
-		// check if already exist symbol
+		// check if symbol exist
 		const currency = query.transaction("currencies").objectStore("currencies").get(symbol);
       currency.onsuccess = (event) => {
 	  		const data = event.target.result;
+
+        if(data == null){
+	  			$(".message").append(`
+					<div class="text-danger">
+		                	Please connect to the internet
+					</div>
+				`);
+
+				// Remove message
+				setTimeout((err) => {
+					$(".message").html("");
+				}, 1000 * 3);
+				return;
+	  		}
 
 			let pairs = symbol.split('_');
 			let fr = pairs[0];
