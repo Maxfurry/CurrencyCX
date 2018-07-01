@@ -42,7 +42,7 @@ self.addEventListener('fetch', function(e) {
           return response;
         });
       });
-    })
+    }).catch(alert("Here");)
   );
 });
 
