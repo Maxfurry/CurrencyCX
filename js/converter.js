@@ -23,14 +23,6 @@ function convertCurrency(){
 		const convrtns = Array.from(obj2arrays(data.results));
 
 		$.each(convrtns, function(index, ans) {
-			$(".wait").append( `<p> Converting, Please wait </p>`);
-			// Remove message
-			setTimeout((err) => {
-				$(".wait").html("");
-			}, 1000 * 1);
-			return;
-			}
-			
 			$(".convertedAmount").prepend(`
 				<div>
 					converted successfully <br />
