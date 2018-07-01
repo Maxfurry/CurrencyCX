@@ -80,7 +80,7 @@ function fetchFromDatabase(symbol, amount) {
         <div>
 					converted successfully <br />
 					${amount} ${fr} =
-					${round(amount * ans.val,5)}
+					${round(amount,5)}
 					${to}
 				</div>
 				`);
