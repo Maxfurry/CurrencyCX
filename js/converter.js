@@ -30,6 +30,7 @@ function convertCurrency(){
 			}, 1000 * 1);
 			return;
 			}
+			
 			$(".convertedAmount").prepend(`
 				<div>
 					converted successfully <br />
