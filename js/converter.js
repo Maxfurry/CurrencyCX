@@ -8,7 +8,7 @@
 
 // Currencies conversion
 function convertCurrency(){
-	$(".convertedAmount").append( Converting, Please wait);
+	$(".convertedAmount").append( `<p> Converting, Please wait </p>`);
 	let conv_fr = $("#option4rm").val();
 	let conv_to = $("#option2").val();
 	let amount	= $("#UserInput").val();
